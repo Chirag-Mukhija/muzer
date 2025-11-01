@@ -1,8 +1,9 @@
+import AppBar from './components/AppBar';
+export default async function Home() {
 
-export default function Home() {
   return (
-    <>
-      <h1>This is page.tsx</h1>
-    </>
+    <main>
+      <AppBar />
+    </main>
   );
 }
