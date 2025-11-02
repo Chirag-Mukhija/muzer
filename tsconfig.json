@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/helpers/SessionWrapper.jsx"  ],
+, "app/helpers/SessionWrapper.jsx", "app/api/streams/route.js"  ],
   "exclude": ["node_modules"]
 }
