@@ -1,5 +1,5 @@
-import {NextResponse} from "next/server"; 
-import * as z from "zod";
+import { NextResponse } from "next/server";
+import { object, string } from "zod";
 import prismaClient from "@/lib/db";
 import { is } from "zod/locales";
 const yt_regex = new RegExp("^(https?\\:\\/\\/)?(www\\.youtube\\.com|youtu\\.?be)\\/.+$","i");
@@ -14,9 +14,9 @@ function extractIdFromUrl(url) {
     return null;
 }
 
-const streamSchema = z.object({
-    userId : z.string(),
-    url : z.string()
+const streamSchema = object({
+    userId : string(),
+    url : string()
 })
 
 export async function POST(request) {
