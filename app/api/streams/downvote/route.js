@@ -21,12 +21,16 @@ export async function POST(request){
     data =  upvoteSchema.parse(await request.json());
     try{
        const upvote = await PrismaClient.upvote.delete({
-        data : {
-            userId : user.userId ,
-            streamId : data.streamId 
+        where: {
+            userId_streamId: { 
+                userId: user.userId,
+                streamId: data.streamId,
+            }
         }
        })
     }catch(e){
-        return NextResponse.json({message : "Error creating an upvote"}, {status: 400});
+        return NextResponse.json({message : "Error creating an downvote"}, {status: 400});
     }
-}
+};
+
+
